@@ -1,0 +1,11 @@
+$primary-color: #020C59;
+$secondary-color: #431F92;
+$details-color: #BDADC4;
+$action-color: #9FF9C3;
+ 
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  primaryColor: $details-color;
+  primaryColor: $action-color;
+}
