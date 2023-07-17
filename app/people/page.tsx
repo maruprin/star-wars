@@ -5,16 +5,12 @@ import { notFound } from "next/navigation";
 import { Ipeople, propsPageType } from "@/types";
 import { fetchApi } from "@/utils";
 
-
-export default async function peoplePage({ searchParams } : propsPageType) {
+export default async function peoplePage({ searchParams }: propsPageType) {
   const page = searchParams.page || "";
   const baseUrl = "https://swapi.dev/api/people";
   const data = await fetchApi<Ipeople>(baseUrl, page);
   if (!data) notFound();
   const slash = "people";
-
-  console.log(data);
-  console.log(searchParams);
 
   return (
     <div className={Styles.pageWrapper}>

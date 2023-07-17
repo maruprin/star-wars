@@ -5,16 +5,13 @@ import { Istarships, propsPageType } from "@/types";
 import { notFound } from "next/navigation";
 import { fetchApi } from "@/utils";
 
-export default async function starshipsPage({ searchParams }: propsPageType ) {
+export default async function starshipsPage({ searchParams }: propsPageType) {
   const page = searchParams.page || "";
   const baseUrl = "https://swapi.dev/api/starships";
   const data = await fetchApi<Istarships>(baseUrl, page);
   if (!data) notFound();
   const slash = "starships";
   const imageList = ["corvette", "assaultstarfighter", "landingcraft"];
-
-  console.log(data);
-  console.log(searchParams);
 
   return (
     <div className={Styles.pageWrapper}>
