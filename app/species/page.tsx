@@ -7,12 +7,12 @@ import { fetchApi } from "@/utils";
 
 export default async function speciesPage({ searchParams }: propsPageType) {
   const page = searchParams.page || "";
-  const baseUrl = "https://swapi.dev/api/vehicles";
+  const baseUrl = "https://swapi.dev/api/species";
   const data = await fetchApi<Ispecies>(baseUrl, page);
   if (!data) notFound();
   const slash = "species";
   const imageList = ["Wookie", "Droid", "Trandoshan"];
-
+  console.log(data);
   return (
     <div className={Styles.pageWrapper}>
       <div className={Styles.pageWrapper__cardsContainer}>
